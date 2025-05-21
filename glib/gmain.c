@@ -31,7 +31,6 @@
  * MT safe
  */
 
-/*#include "/home/remol/qnx800/target/qnx/usr/include/signal.h"*/
 #include "config.h"
 #include "glibconfig.h"
 #include "glib_trace.h"

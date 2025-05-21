@@ -32,7 +32,6 @@
 #include "config.h"
 #include "glibconfig.h"
 
-/*#include "/home/remol/qnx800/target/qnx/usr/include/signal.h"*/
 #include <signal.h>
 #include <stdarg.h>
 #include <stdio.h>

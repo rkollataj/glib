@@ -23,7 +23,6 @@
 #include "gtestutils.h"
 #include "gfileutils.h"
 
-//#include "/home/remol/qnx800/target/qnx/usr/include/signal.h"
 #include <sys/types.h>
 #ifdef G_OS_UNIX
 #include <sys/wait.h>

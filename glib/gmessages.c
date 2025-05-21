@@ -30,7 +30,6 @@
 
 #include "config.h"
 
-/*#include "/home/remol/qnx800/target/qnx/usr/include/signal.h"*/
 #include <stdlib.h>
 #include <stdarg.h>
 #include <stdio.h>
