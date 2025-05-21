@@ -15,8 +15,7 @@ cpu = 'x86_64'
 endian = 'little'
 
 [built-in options]
-#c_args = ['-I/home/remol/qnx800/target/qnx/usr/include/', '-I/home/remol/qnx800/target/qnx/usr/include/devs/include_aarch64/machine/', '-I/home/remol/qnx800/target/qnx/usr/include/']
-c_args = ['-D__EXT_POSIX1_199309', '-I/home/remol/qnx800/target/qnx/usr/include/', '-I/home/remol/qnx800/target/qnx/usr/include/']
-c_link_args = ['-lm']
+c_args = ['-I/home/remol/qnx800/target/qnx/usr/include/', '-I/home/remol/qnx800/target/qnx/usr/include/']
+c_link_args = ['-lm', '-L/home/remol/qnx800/target/qnx/usr/lib/', '-lffi']
 cpp_args = ['-I/home/remol/qnx800/target/qnx/usr/include/c++/v1/', '-I/home/remol/qnx800/target/qnx/usr/include/c++/v1/__bit']
 cpp_link_args = ['-lm']

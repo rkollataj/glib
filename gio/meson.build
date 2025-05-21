@@ -9,6 +9,8 @@ gio_c_args_internal = [
   '-DGIO_COMPILATION',
 ]
 
+glib_conf.set('HAVE_QNX', 1)
+
 # Install empty glib_giomodulesdir
 install_emptydir(glib_giomodulesdir)
 

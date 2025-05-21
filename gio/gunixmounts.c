@@ -1751,7 +1751,7 @@ _g_unix_mount_points_get_from_file (const char *table_path,
 
 /* Common code {{{2 */
 #else
-#error No g_get_mount_table() implementation for system
+#warning No g_get_mount_table() implementation for system
 #endif
 
 static guint64
@@ -1965,33 +1965,33 @@ copy_mount_point_cb (gconstpointer src,
  * Returns: (element-type GUnixMountPoint) (transfer full):
  *     a #GList of the UNIX mountpoints.
  **/
-GList *
-g_unix_mount_points_get (guint64 *time_read)
-{
-  static GList *mnt_pts_last = NULL;
-  static guint64 time_read_last = 0;
-  GList *mnt_pts = NULL;
-  guint64 time_read_now;
-  G_LOCK_DEFINE_STATIC (unix_mount_points);
+/*GList **/
+/*g_unix_mount_points_get (guint64 *time_read)*/
+/*{*/
+/*  static GList *mnt_pts_last = NULL;*/
+/*  static guint64 time_read_last = 0;*/
+/*  GList *mnt_pts = NULL;*/
+/*  guint64 time_read_now;*/
+/*  G_LOCK_DEFINE_STATIC (unix_mount_points);*/
 
-  G_LOCK (unix_mount_points);
+/*  G_LOCK (unix_mount_points);*/
 
-  time_read_now = get_mount_points_timestamp ();
-  if (time_read_now != time_read_last || mnt_pts_last == NULL)
-    {
-      time_read_last = time_read_now;
-      g_list_free_full (mnt_pts_last, (GDestroyNotify) g_unix_mount_point_free);
-      mnt_pts_last = _g_get_unix_mount_points ();
-    }
-  mnt_pts = g_list_copy_deep (mnt_pts_last, copy_mount_point_cb, NULL);
+/*  time_read_now = get_mount_points_timestamp ();*/
+/*  if (time_read_now != time_read_last || mnt_pts_last == NULL)*/
+/*    {*/
+/*      time_read_last = time_read_now;*/
+/*      g_list_free_full (mnt_pts_last, (GDestroyNotify) g_unix_mount_point_free);*/
+/*      mnt_pts_last = _g_get_unix_mount_points ();*/
+/*    }*/
+/*  mnt_pts = g_list_copy_deep (mnt_pts_last, copy_mount_point_cb, NULL);*/
 
-  G_UNLOCK (unix_mount_points);
+/*  G_UNLOCK (unix_mount_points);*/
 
-  if (time_read)
-    *time_read = time_read_now;
+/*  if (time_read)*/
+/*    *time_read = time_read_now;*/
 
-  return mnt_pts;
-}
+/*  return mnt_pts;*/
+/*}*/
 
 /**
  * g_unix_mount_points_get_from_file:
@@ -2016,13 +2016,13 @@ g_unix_mount_points_get (guint64 *time_read)
  *   points, or `NULL` if there was an error loading them
  * Since: 2.82
  */
-GUnixMountPoint **
-g_unix_mount_points_get_from_file (const char *table_path,
-                                   uint64_t   *time_read_out,
-                                   size_t     *n_points_out)
-{
-  return _g_unix_mount_points_get_from_file (table_path, time_read_out, n_points_out);
-}
+/*GUnixMountPoint ***/
+/*g_unix_mount_points_get_from_file (const char *table_path,*/
+/*                                   uint64_t   *time_read_out,*/
+/*                                   size_t     *n_points_out)*/
+/*{*/
+/*  return _g_unix_mount_points_get_from_file (table_path, time_read_out, n_points_out);*/
+/*}*/
 
 /**
  * g_unix_mount_point_at:
@@ -2048,24 +2048,24 @@ g_unix_mount_point_at (const char *mount_path,
   GList *mount_points, *l;
   GUnixMountPoint *mount_point, *found;
 
-  mount_points = g_unix_mount_points_get (time_read);
+  /*mount_points = g_unix_mount_points_get (time_read);*/
 
   found = NULL;
-  for (l = mount_points; l != NULL; l = l->next)
-    {
-      mount_point = l->data;
+  /*for (l = mount_points; l != NULL; l = l->next)*/
+  /*  {*/
+  /*    mount_point = l->data;*/
 
-      if (strcmp (mount_path, mount_point->mount_path) == 0)
-        {
-          if (found != NULL)
-            g_unix_mount_point_free (found);
+  /*    if (strcmp (mount_path, mount_point->mount_path) == 0)*/
+  /*      {*/
+  /*        if (found != NULL)*/
+  /*          g_unix_mount_point_free (found);*/
 
-          found = mount_point;
-        }
-      else
-        g_unix_mount_point_free (mount_point);
-    }
-  g_list_free (mount_points);
+  /*        found = mount_point;*/
+  /*      }*/
+  /*    else*/
+  /*      g_unix_mount_point_free (mount_point);*/
+  /*  }*/
+  /*g_list_free (mount_points);*/
 
   return found;
 }

@@ -34,7 +34,7 @@ option('xattr',
 
 option('libmount',
        type : 'feature',
-       value : 'auto',
+       value : 'disabled',
        description : 'build with libmount support')
 
 option('man',
