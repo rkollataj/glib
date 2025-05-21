@@ -4,18 +4,8 @@ cpp = 'aarch64-unknown-nto-qnx8.0.0-g++'
 ar = 'aarch64-unknown-nto-qnx8.0.0-ar'
 strip = 'aarch64-unknown-nto-qnx8.0.0-strip'
 
-[properties]
-needs_exe_wrapper = true
-sys_root = '../target/qnx/aarch64le/'
-
 [host_machine]
 system = 'linux'
 cpu_family = 'x86_64'
 cpu = 'x86_64'
 endian = 'little'
-
-[built-in options]
-c_args = ['-I../target/qnx/usr/include/', '-I../target/qnx/usr/include/']
-c_link_args = ['-lm', '-Ltarget/qnx/usr/lib/', '-lffi']
-cpp_args = ['-I../target/qnx/usr/include/c++/v1/', '-I../target/qnx/usr/include/c++/v1/__bit']
-cpp_link_args = ['-lm']
