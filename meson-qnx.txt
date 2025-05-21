@@ -1,0 +1,22 @@
+[binaries]
+c = '/home/remol/qnx800/host/linux/x86_64/usr/bin/aarch64-unknown-nto-qnx8.0.0-gcc'
+cpp = '/home/remol/qnx800/host/linux/x86_64/usr/bin/aarch64-unknown-nto-qnx8.0.0-g++'
+ar = '/home/remol/qnx800/host/linux/x86_64/usr/bin/aarch64-unknown-nto-qnx8.0.0-ar'
+strip = '/home/remol/qnx800/host/linux/x86_64/usr/bin/aarch64-unknown-nto-qnx8.0.0-strip'
+
+[properties]
+needs_exe_wrapper = true
+sys_root = '/home/remol/qnx800/target/qnx/aarch64le/'
+
+[host_machine]
+system = 'linux'
+cpu_family = 'x86_64'
+cpu = 'x86_64'
+endian = 'little'
+
+[built-in options]
+#c_args = ['-I/home/remol/qnx800/target/qnx/usr/include/', '-I/home/remol/qnx800/target/qnx/usr/include/devs/include_aarch64/machine/', '-I/home/remol/qnx800/target/qnx/usr/include/']
+c_args = ['-D__EXT_POSIX1_199309', '-I/home/remol/qnx800/target/qnx/usr/include/', '-I/home/remol/qnx800/target/qnx/usr/include/']
+c_link_args = ['-lm']
+cpp_args = ['-I/home/remol/qnx800/target/qnx/usr/include/c++/v1/', '-I/home/remol/qnx800/target/qnx/usr/include/c++/v1/__bit']
+cpp_link_args = ['-lm']

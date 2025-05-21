@@ -123,6 +123,7 @@ void     g_thread_foreach      (GFunc             thread_func,
 
 #ifndef G_OS_WIN32
 #include <sys/types.h>
+#include <sys/platform.h>
 #include <pthread.h>
 #endif
 

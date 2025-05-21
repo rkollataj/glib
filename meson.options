@@ -29,7 +29,7 @@ option('selinux',
 
 option('xattr',
        type : 'boolean',
-       value : true,
+       value : false,
        description : 'build with xattr support')
 
 option('libmount',
@@ -68,7 +68,7 @@ option('tapset_install_dir',
 
 option('sysprof',
        type : 'feature',
-       value : 'auto',
+       value : 'disabled',
        description : 'include tracing support for sysprof')
 
 option('documentation',
@@ -89,7 +89,7 @@ option('bsymbolic_functions',
 
 option('force_posix_threads',
        type : 'boolean',
-       value : false,
+       value : true,
        description : 'Also use posix threads in case the platform defaults to another implementation (on Windows for example)')
 
 option('tests',

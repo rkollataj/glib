@@ -991,9 +991,9 @@ if host_system == 'darwin'
   endif
 endif
 
-if host_system == 'qnx'
-  glib_conf.set('HAVE_QNX', 1)
-endif
+#if host_system == 'qnx'
+glib_conf.set('HAVE_QNX', 1)
+#endif
 
 # Check for futex(2)
 if cc.compiles('''#include <linux/futex.h>
@@ -2244,8 +2244,9 @@ endif
 subproject('gvdb')
 gvdb_dep = dependency('gvdb')
 
-libm = cc.find_library('m', required : false)
-libffi_dep = dependency('libffi', version : '>= 3.0.0')
+libm = cc.find_library('libm', required : false, dirs: '/home/remol/qnx800/target/qnx/aarch64le/lib')
+libffi_dep = cc.find_library('ffi', required : false, dirs: '/home/remol/qnx800/target/qnx/usr/lib')
+#libffi_dep = dependency('libffi', version : '>= 3.0.0')
 
 libz_dep = dependency('zlib')
 
@@ -2255,7 +2256,7 @@ libatomic_test_code = '''
   }'''
 atomic_dep = []
 if cc.links(libatomic_test_code, args : '-latomic', name : 'check for -latomic')
-  atomic_dep = cc.find_library('atomic')
+  atomic_dep = cc.find_library('atomic', dirs: '/home/remol/qnx800/target/qnx/aarch64le/lib/gcc/12.2.0/')
 endif
 
 # First check in libc, fallback to libintl, and as last chance build
