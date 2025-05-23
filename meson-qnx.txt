@@ -12,3 +12,6 @@ system = 'linux'
 cpu_family = 'x86_64'
 cpu = 'x86_64'
 endian = 'little'
+
+[built-in options]
+c_link_args = ['-lffi']
