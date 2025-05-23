@@ -4,6 +4,9 @@ cpp = 'aarch64-unknown-nto-qnx8.0.0-g++'
 ar = 'aarch64-unknown-nto-qnx8.0.0-ar'
 strip = 'aarch64-unknown-nto-qnx8.0.0-strip'
 
+[properties]
+needs_exe_wrapper = true
+
 [host_machine]
 system = 'linux'
 cpu_family = 'x86_64'
