@@ -2248,8 +2248,7 @@ subproject('gvdb')
 gvdb_dep = dependency('gvdb')
 
 libm = cc.find_library('libm', required : false, dirs: join_paths(qnx_path, 'target/qnx7/aarch64le/lib'))
-libffi_dep = cc.find_library('ffi', required : false, dirs: join_paths(qnx_path, 'target/qnx7/usr/lib'))
-#libffi_dep = dependency('libffi', version : '>= 3.0.0')
+libffi_dep = dependency('libffi', version : '>= 3.0.0')
 
 libz_dep = dependency('zlib')
 

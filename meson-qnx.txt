@@ -9,8 +9,8 @@ needs_exe_wrapper = true
 
 [host_machine]
 system = 'linux'
-cpu_family = 'x86_64'
-cpu = 'x86_64'
+cpu_family = 'aarch64'
+cpu = 'aarch64'
 endian = 'little'
 
 [built-in options]
