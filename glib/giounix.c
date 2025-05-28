@@ -33,6 +33,8 @@
 
 #include "config.h"
 
+#include <glib/gstdio.h>
+
 #define _POSIX_SOURCE		/* for SSIZE_MAX */
 
 #include <sys/types.h>
@@ -42,7 +44,6 @@
 #include <errno.h>
 #include <string.h>
 #include <fcntl.h>
-#include <glib/gstdio.h>
 
 #ifndef O_CLOEXEC
 #define O_CLOEXEC 0
