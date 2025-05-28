@@ -15,6 +15,8 @@ cc = meson.get_compiler('c')
 c_standards = {}
 
 qnx_path = fs.expanduser(get_option('qnx_path'))
+sock_lib_path = join_paths(qnx_path, 'target/qnx7/aarch64le/io-sock/lib')
+add_project_link_arguments(['-lffi', '-L'+sock_lib_path, '-lsocket'], language : 'c')
 
 foreach std : ['89', '99', '11', '17']
   arg = (cc.get_id() == 'msvc' ? '/std:' : '-std=') + 'c' + std

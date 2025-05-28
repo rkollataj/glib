@@ -12,6 +12,3 @@ system = 'linux'
 cpu_family = 'aarch64'
 cpu = 'aarch64'
 endian = 'little'
-
-[built-in options]
-c_link_args = ['-lffi', '-lsocket']
