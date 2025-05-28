@@ -59,7 +59,7 @@ if host_system != 'windows'
       network_libs += [ cc.find_library('bind') ]
       network_args += [ '-lbind' ]
     elif cc.links(res_query_test, args : '-lsocket', name : 'res_query() in -lsocket')
-      network_libs += [ cc.find_library('socket', dirs: join_paths(qnx_path, 'target/qnx/aarch64le/lib')) ]
+      network_libs += [ cc.find_library('socket', dirs: join_paths(qnx_path, 'target/qnx7/aarch64le/lib')) ]
       network_args += [ '-lsocket' ]
     else
       error('Could not find res_query()')
@@ -74,7 +74,7 @@ if host_system != 'windows'
                    }'''
   if not cc.links(socket_test, name : 'socket()')
     if cc.links(socket_test, args : '-lsocket', name : 'socket() in -lsocket')
-      network_libs += [ cc.find_library('socket', dirs: join_paths(qnx_path, 'target/qnx/aarch64le/lib')) ]
+      network_libs += [ cc.find_library('socket', dirs: join_paths(qnx_path, 'target/qnx7/aarch64le/lib')) ]
       network_args += [ '-lsocket' ]
     else
       error('Could not find socket()')

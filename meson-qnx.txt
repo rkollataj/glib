@@ -1,8 +1,8 @@
 [binaries]
-c = 'aarch64-unknown-nto-qnx8.0.0-gcc'
-cpp = 'aarch64-unknown-nto-qnx8.0.0-g++'
-ar = 'aarch64-unknown-nto-qnx8.0.0-ar'
-strip = 'aarch64-unknown-nto-qnx8.0.0-strip'
+c = 'aarch64-unknown-nto-qnx7.1.0-gcc'
+cpp = 'aarch64-unknown-nto-qnx7.1.0-g++'
+ar = 'aarch64-unknown-nto-qnx7.1.0-ar'
+strip = 'aarch64-unknown-nto-qnx7.1.0-strip'
 
 [properties]
 needs_exe_wrapper = true

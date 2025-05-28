@@ -1,6 +1,6 @@
 option('qnx_path',
        type : 'string',
-       value : '~/qnx800')
+       value : '~/qnx710')
 
 option('runtime_libdir',
        type : 'string',
