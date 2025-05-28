@@ -14,7 +14,7 @@ fs = import('fs')
 cc = meson.get_compiler('c')
 c_standards = {}
 
-qnx_path = get_option('qnx_path')
+qnx_path = fs.expanduser(get_option('qnx_path'))
 
 foreach std : ['89', '99', '11', '17']
   arg = (cc.get_id() == 'msvc' ? '/std:' : '-std=') + 'c' + std
@@ -95,6 +95,7 @@ current = binary_age - interface_age
 library_version = '@0@.@1@.@2@'.format(soversion, current, interface_age)
 darwin_versions = [current + 1, '@0@.@1@'.format(current + 1, interface_age)]
 
+qnxinc = include_directories(join_paths(qnx_path, 'target/qnx7/usr/include/io-sock/'))
 configinc = include_directories('.')
 glibinc = include_directories('glib')
 gobjectinc = include_directories('gobject')
